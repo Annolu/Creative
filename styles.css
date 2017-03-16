@@ -1,4 +1,101 @@
+html,body{
+  height:100%;
+  width: 100%;
+}
 body{
   margin: 0;
   padding: 0;
+  color: white;
+  font-family: 'Lato', sans-serif;
+}
+
+h1{
+  font-size: 50px;
+  color: white;
+  padding: 170px 0 20px 0;
+}
+
+h2{
+  font-size: 35px;
+  color: white;
+  padding: 100px 0 20px 0;
+}
+
+p{
+  font-size: 18px;
+  padding-bottom: 40px;
+}
+
+a{
+  color: white;
+}
+
+a:hover{
+  color: white;
+  text-decoration: none;
+}
+
+a:focus{
+  color: white;
+  text-decoration: none;
+}
+
+.navbar{
+  /*background: transparent;*/
+}
+
+.navbar a{
+  color: rgba(255, 255, 255, 0.7) !important;
+  cursor: pointer;
+  transition: all 200ms ease-in-out;
+}
+
+.navbar a:hover{
+  color: rgba(255, 255, 255, 1) !important;
+}
+
+.nav-item{
+  margin-left: 20px;
+}
+
+.hero-section{
+  background: url(img/header.jpg) no-repeat;
+  background-size: cover;
+  background-position: center;
+  height: 100%;
+  display: block;
+  position: relative;
+  width: 100%;
+}
+
+.buttons{
+  background-color: #F05F40;
+  height: 50px;
+  width: 120px;
+  padding: 15px 40px;
+  border-radius: 24px;
+  transition: all 200ms ease-in-out;
+  text-transform: uppercase;
+  cursor: pointer;
+}
+
+.buttons-reversed{
+  background-color: white;
+  color: black;
+}
+
+.buttons:hover{
+  background-color: #ee4b28;
+}
+
+.orange-section{
+  display: block;
+  position: relative;
+  width: 100%;
+  background-color: #F05F40;
+  height: 100%;
+}
+
+.orange-section h2{
+  padding-top: 100px;
 }

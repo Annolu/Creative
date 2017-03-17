@@ -2,6 +2,7 @@ html,body{
   height:100%;
   width: 100%;
 }
+
 body{
   margin: 0;
   padding: 0;
@@ -11,33 +12,48 @@ body{
 
 h1{
   font-size: 50px;
-  color: white;
-  padding: 170px 0 20px 0;
+  text-transform: uppercase;
 }
 
 h2{
   font-size: 35px;
-  color: white;
-  padding: 100px 0 20px 0;
+}
+
+h3{
+  font-size: 24px;
 }
 
 p{
-  font-size: 18px;
-  padding-bottom: 40px;
+  font-family: Merriweather,'Helvetica Neue',Arial,sans-serif;
+  font-size: 16px;
+  font-weight: 300;
 }
 
 a{
-  color: white;
+  color: rgba(255, 255, 255, 1);
+  cursor: pointer;
+  transition: all 200ms ease-in-out;
 }
 
 a:hover{
-  color: white;
+  color: rgba(255, 255, 255, 1);
   text-decoration: none;
 }
 
 a:focus{
-  color: white;
+  color: rgba(255, 255, 255, 1);
   text-decoration: none;
+}
+
+hr{
+  width: 55px;
+  height: 2px;
+}
+
+.centred-wrapper{
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 80px 0;
 }
 
 .navbar{
@@ -46,8 +62,6 @@ a:focus{
 
 .navbar a{
   color: rgba(255, 255, 255, 0.7) !important;
-  cursor: pointer;
-  transition: all 200ms ease-in-out;
 }
 
 .navbar a:hover{
@@ -59,13 +73,24 @@ a:focus{
 }
 
 .hero-section{
+  position: relative;
   background: url(img/header.jpg) no-repeat;
   background-size: cover;
   background-position: center;
-  height: 100%;
+  padding-top: 85px;
+  padding-bottom: 70px;
   display: block;
-  position: relative;
-  width: 100%;
+}
+
+.hero-section p{
+  padding-bottom: 50px;
+  color: rgba(255, 255, 255, 0.7);
+  font-size: 18px;
+}
+
+.hero-section hr{
+  background-color: #F05F40;
+  margin: 25px auto;
 }
 
 .buttons{
@@ -81,21 +106,161 @@ a:focus{
 
 .buttons-reversed{
   background-color: white;
-  color: black;
+  color: #333;
 }
 
 .buttons:hover{
   background-color: #ee4b28;
 }
 
+.buttons-reversed:hover{
+  background-color: #eee;
+  color: #333;
+}
+
 .orange-section{
   display: block;
   position: relative;
-  width: 100%;
   background-color: #F05F40;
-  height: 100%;
 }
 
 .orange-section h2{
-  padding-top: 100px;
+  color: white;
+}
+
+.orange-section p{
+  margin-bottom: 55px;
+  color: rgba(255, 255, 255, 0.7);
+}
+
+.orange-section hr{
+  background-color: rgba(255, 255, 255, 1);
+}
+
+.white-sections .content-wrapper{
+  padding: 50px 0;
+}
+
+.white-sections .thumbnails i{
+  position: relative;
+  color: #F05F40;
+  font-size: 55px;
+  margin: 25px 0;
+  opacity: 0;
+}
+
+@keyframes pop-up{
+  0%{
+    opacity: 0;
+    top: 60px;
+  }
+  100%{
+    top: 0;
+    opacity: 1;
+  }
+}
+
+.white-sections .thumbnails:nth-child(1) i.pop-up{
+  animation: pop-up 400ms ease-in-out forwards;
+}
+
+.white-sections .thumbnails:nth-child(2) i.pop-up{
+  animation: pop-up 400ms ease-in-out forwards 100ms;
+}
+
+.white-sections .thumbnails:nth-child(3) i.pop-up{
+  animation: pop-up 400ms ease-in-out forwards 200ms;
+}
+
+.white-sections .thumbnails:nth-child(4) i.pop-up{
+  animation: pop-up 400ms ease-in-out forwards 300ms;
+}
+
+.white-sections{
+  color: #333;
+}
+
+.white-sections p{
+  color: #777;
+}
+
+.white-sections hr{
+  background-color: #F05F40;
+  margin: 25px auto;
+}
+
+.dark-section{
+  background-color: #222;
+}
+
+.dark-section .centred-wrapper{
+  padding: 50px 0;
+}
+
+.dark-section h2{
+  margin-bottom: 50px;
+}
+
+.white-sections.contact .thumbnails i{
+  color: #333;
+  font-size: 45px;
+  margin: 25px 0;
+}
+
+.thumbnails .e-mail{
+  color: #F05F40;
+  display: block;
+}
+
+.thumbnails .e-mail:hover{
+  text-decoration: underline;
+}
+
+.white-sections.contact p{
+  color: #333;
+}
+
+.projects-section .img-wrapper{
+  padding: 0;
+  cursor: pointer;
+}
+
+.img-wrapper img{
+  width: 100%;
+}
+
+.orange-layer{
+  background-color: rgba(240,95,64,0.7);
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  opacity: 0;
+  transition: all 200ms ease-in-out;
+  transform: rotateX(90deg);
+}
+
+.projects-section .img-wrapper:hover > .orange-layer{
+  opacity: 1;
+  transform: rotateX(0deg);
+}
+
+.orange-layer p{
+  text-align: center;
+  color: white;
+  font-family: 'Lato', sans-serif;
+  font-weight: 400;
+  text-shadow: 1px 1px 10px #666;
+}
+
+.orange-layer p:first-child{
+  margin-top: 19%;
+  font-size: 18px;
+  margin-bottom: 0;
+  text-transform: uppercase;
+  color: rgba(255,255,255,.7);
+}
+
+.orange-layer p:last-child{
+  opacity: 1;
+  font-size: 24px;
 }

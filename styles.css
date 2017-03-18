@@ -56,6 +56,14 @@ hr{
   padding: 80px 0;
 }
 
+.parallax {
+    background-image: url("img/header.jpg");
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
 .navbar{
   transition: all 200ms ease-in-out;
 }
@@ -79,9 +87,9 @@ hr{
 
 .hero-section{
   position: relative;
-  background: url(img/header.jpg) no-repeat;
-  background-size: cover;
-  background-position: center;
+  /*background: url(img/header.jpg) no-repeat;*/
+  /*background-size: cover;
+  background-position: center;*/
   padding-top: 85px;
   padding-bottom: 70px;
   display: block;
@@ -274,4 +282,8 @@ hr{
 .orange-layer p:last-child{
   opacity: 1;
   font-size: 24px;
+}
+
+.navbar-toggler{
+  cursor: pointer;
 }

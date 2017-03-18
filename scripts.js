@@ -1,10 +1,42 @@
 $(document).ready(function(){
-  $(window).scroll(function(){
+
+  //orange and dark icons pup-up
+  function iconsPupUp() {
+
     var distanceFromTop= $(this).scrollTop();
-    var orangeSection= $('.orange-section')[0];
-    var iconsFadeInPoint= orangeSection.offsetHeight + orangeSection.clientHeight;
-    if(distanceFromTop>iconsFadeInPoint){
-      $('.fa').addClass('pop-up');
+    var orangeSection= $('.orange-section');
+    var darkSection= $('.dark-section');
+    var whiteSections= $('.white-sections');
+
+    var whiteSectionsOffset= whiteSections.offset().top;
+
+    var orangeIconsPopUpPoint= orangeSection.offset().top + orangeSection[0].clientHeight/3;
+    var darkIconsPopUpPoint= darkSection.offset().top;
+
+    if(distanceFromTop>orangeIconsPopUpPoint & distanceFromTop < whiteSectionsOffset+150){
+      $('.orange-icons').addClass('pop-up');
     }
+
+    if(distanceFromTop>darkIconsPopUpPoint){
+      $('.dark-icons').addClass('pop-up');
+    }
+  }
+
+  iconsPupUp();
+
+  $(window).scroll(function(){
+
+    let distanceFromTop= $(this).scrollTop();
+
+    //dark topnav background
+    var navbar= $('.navbar');
+
+    if(distanceFromTop>1){
+      navbar.addClass('nav-bg');
+    }else{
+      navbar.removeClass('nav-bg');
+    }
+
+    iconsPupUp();
   })
 })

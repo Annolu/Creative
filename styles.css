@@ -57,7 +57,7 @@ hr{
 }
 
 .navbar{
-  /*background: transparent;*/
+  transition: all 200ms ease-in-out;
 }
 
 .navbar a{
@@ -70,6 +70,11 @@ hr{
 
 .nav-item{
   margin-left: 20px;
+}
+
+.nav-bg{
+  background-color: rgba(51,51,51,0.8);
+
 }
 
 .hero-section{
@@ -152,10 +157,15 @@ hr{
 @keyframes pop-up{
   0%{
     opacity: 0;
-    top: 60px;
+    transform: scale(0);
   }
+
+  80%{
+    opacity: 1;
+  }
+
   100%{
-    top: 0;
+    transform: scale(1);
     opacity: 1;
   }
 }
@@ -165,15 +175,15 @@ hr{
 }
 
 .white-sections .thumbnails:nth-child(2) i.pop-up{
-  animation: pop-up 400ms ease-in-out forwards 100ms;
-}
-
-.white-sections .thumbnails:nth-child(3) i.pop-up{
   animation: pop-up 400ms ease-in-out forwards 200ms;
 }
 
+.white-sections .thumbnails:nth-child(3) i.pop-up{
+  animation: pop-up 400ms ease-in-out forwards 400ms;
+}
+
 .white-sections .thumbnails:nth-child(4) i.pop-up{
-  animation: pop-up 400ms ease-in-out forwards 300ms;
+  animation: pop-up 400ms ease-in-out forwards 600ms;
 }
 
 .white-sections{
@@ -204,12 +214,13 @@ hr{
 .white-sections.contact .thumbnails i{
   color: #333;
   font-size: 45px;
-  margin: 25px 0;
+  margin: 10px 0;
 }
 
 .thumbnails .e-mail{
   color: #F05F40;
   display: block;
+  transition: all 200ms ease-in-out;
 }
 
 .thumbnails .e-mail:hover{

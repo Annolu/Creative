@@ -57,11 +57,11 @@ hr{
 }
 
 .parallax {
-    background-image: url("img/header.jpg");
-    background-attachment: fixed;
-    background-position: center;
-    background-repeat: no-repeat;
-    background-size: cover;
+  background-image: url("img/header.jpg");
+  background-attachment: fixed;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
 }
 
 .navbar{
@@ -82,7 +82,20 @@ hr{
 
 .nav-bg{
   background-color: rgba(51,51,51,0.8);
+}
 
+.navbar-toggler{
+  cursor: pointer;
+  background-color: rgba(255, 255, 255, 0.5);
+  transition: all 200ms ease-in-out;
+}
+
+.navbar-toggler:hover{
+  background-color: rgba(255, 255, 255, 0.6);
+}
+
+.navbar-toggler:focus{
+  outline: none;
 }
 
 .hero-section{
@@ -165,7 +178,7 @@ hr{
 @keyframes pop-up{
   0%{
     opacity: 0;
-    transform: scale(0);
+    transform: scale(0) translateY(120px);
   }
 
   80%{
@@ -173,7 +186,7 @@ hr{
   }
 
   100%{
-    transform: scale(1);
+    transform: scale(1) translateY(0px);
     opacity: 1;
   }
 }
@@ -284,6 +297,8 @@ hr{
   font-size: 24px;
 }
 
-.navbar-toggler{
-  cursor: pointer;
+@media (max-width: 770px) {
+  .nav-item:nth-child(1){
+    margin-top: 20px;
+  }
 }

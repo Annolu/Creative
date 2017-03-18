@@ -42,7 +42,7 @@ $(document).ready(function(){
 
   //smooth scroll to internal anchor link
 
-    $('a[href^="#"]').on('click',function (e) {
+    $('a[href*="#"]:not([href="#"])').on('click',function (e) {
 	    e.preventDefault();
 
 	    var target = this.hash;
@@ -50,8 +50,6 @@ $(document).ready(function(){
 
 	    $('html, body').stop().animate({
 	        'scrollTop': $target.offset().top - 100
-	    }, 900, 'swing', function () {
-	        window.location.hash = target;
-	    });
+	    }, 900, 'swing');
 	})
 })

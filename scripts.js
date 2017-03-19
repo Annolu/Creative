@@ -11,7 +11,7 @@ $(document).ready(function(){
     var whiteSectionsOffset= whiteSections.offset().top;
 
     var orangeIconsPopUpPoint= orangeSection.offset().top + orangeSection[0].clientHeight/3;
-    var darkIconsPopUpPoint= darkSection.offset().top;
+    var darkIconsPopUpPoint= darkSection.offset().top -100;
 
     if(distanceFromTop>orangeIconsPopUpPoint & distanceFromTop < whiteSectionsOffset+150){
       $('.orange-icons').addClass('pop-up');

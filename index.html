@@ -40,7 +40,9 @@
         </div>
       </nav>
     </header>
-    <section class="hero-section parallax">
+    <section class="hero-section">
+      <div class="parallax">
+      </div>
       <div class="container">
         <div class="centred-wrapper text-center">
           <h1>Sed ut perspiciatis unde omnis iste</h1>
@@ -95,47 +97,110 @@
         <div class="container-fluid">
           <div class="row">
             <div class="img-wrapper col-md-6 col-lg-4">
-              <div class="orange-layer">
+              <div class="orange-layer" onclick="openModal();currentSlide(1)">
                 <p>Category</p>
                 <p>Project name</p>
               </div>
-                <img src="img/portfolio/thumbnails/1.jpg" alt="Project 1 image">
+                <img src="img/portfolio/thumbnails/1.jpg" alt="Project 1 image"  style="width:100%" class="hover-shadow cursor">
             </div>
             <div class="img-wrapper col-md-6 col-lg-4">
-              <div class="orange-layer">
+              <div class="orange-layer" onclick="openModal();currentSlide(2)">
+                <p>Category</p>
+                <p>Project name</p>
+              </div>
+                <img src="img/portfolio/thumbnails/2.jpg" alt="Project 2 image"  style="width:100%" class="hover-shadow cursor">
+            </div>
+            <div class="img-wrapper col-md-6 col-lg-4">
+              <div class="orange-layer" onclick="openModal();currentSlide(3)">
+                <p>Category</p>
+                <p>Project name</p>
+              </div>
+                <img src="img/portfolio/thumbnails/3.jpg" alt="Project 3 image"  style="width:100%" class="hover-shadow cursor">
+            </div>
+            <div class="img-wrapper col-md-6 col-lg-4">
+              <div class="orange-layer"onclick="openModal();currentSlide(4)" >
+              <p>Category</p>
+              <p>Project name</p>
+            </div>
+                <img src="img/portfolio/thumbnails/4.jpg" alt="Project 4 image"  style="width:100%" class="hover-shadow cursor">
+            </div>
+            <div class="img-wrapper col-md-6 col-lg-4">
+              <div class="orange-layer"onclick="openModal();currentSlide(5)" >
+              <p>Category</p>
+              <p>Project name</p>
+            </div>
+                <img src="img/portfolio/thumbnails/5.jpg" alt="Project 5 image"  style="width:100%" class="hover-shadow cursor">
+            </div>
+            <div class="img-wrapper col-md-6 col-lg-4">
+              <div class="orange-layer"onclick="openModal();currentSlide(6)" >
+                <p>Category</p>
+                <p>Project name</p>
+              </div>
+                <img src="img/portfolio/thumbnails/6.jpg" alt="Project 6 image"  style="width:100%" class="hover-shadow cursor">
+            </div>
+          </div>
+          <div id="myModal" class="modal">
+            <span class="close cursor" onclick="closeModal()">&times;</span>
+            <div class="modal-content">
 
-                <p>Category</p>
-                <p>Project name</p>
+              <div class="mySlides">
+                <div class="numbertext">1 of 6</div>
+                  <img src="img/portfolio/thumbnails/1.jpg">
               </div>
-                <img src="img/portfolio/thumbnails/2.jpg" alt="Project 2 image">
-            </div>
-            <div class="img-wrapper col-md-6 col-lg-4">
-              <div class="orange-layer">
-                <p>Category</p>
-                <p>Project name</p>
+
+              <div class="mySlides">
+                <div class="numbertext">2 of 6</div>
+                  <img src="img/portfolio/thumbnails/2.jpg">
               </div>
-                <img src="img/portfolio/thumbnails/3.jpg" alt="Project 3 image">
-            </div>
-            <div class="img-wrapper col-md-6 col-lg-4">
-              <div class="orange-layer">
-              <p>Category</p>
-              <p>Project name</p>
-            </div>
-                <img src="img/portfolio/thumbnails/4.jpg" alt="Project 4 image">
-            </div>
-            <div class="img-wrapper col-md-6 col-lg-4">
-              <div class="orange-layer">
-              <p>Category</p>
-              <p>Project name</p>
-            </div>
-                <img src="img/portfolio/thumbnails/5.jpg" alt="Project 5 image">
-            </div>
-            <div class="img-wrapper col-md-6 col-lg-4">
-              <div class="orange-layer">
-                <p>Category</p>
-                <p>Project name</p>
+
+              <div class="mySlides">
+                <div class="numbertext">3 of 6</div>
+                  <img src="img/portfolio/thumbnails/3.jpg">
               </div>
-                <img src="img/portfolio/thumbnails/6.jpg" alt="Project 6 image">
+
+              <div class="mySlides">
+                <div class="numbertext">4 of 6</div>
+                  <img src="img/portfolio/thumbnails/4.jpg">
+              </div>
+
+              <div class="mySlides">
+                <div class="numbertext">5 of 6</div>
+                  <img src="img/portfolio/thumbnails/5.jpg">
+              </div>
+
+              <div class="mySlides">
+                <div class="numbertext">6 of 6</div>
+                  <img src="img/portfolio/thumbnails/6.jpg">
+              </div>
+
+              <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+              <a class="next" onclick="plusSlides(1)">&#10095;</a>
+
+              <!--<div class="caption-container">
+                <p id="caption"></p>
+              </div>-->
+<!--
+              <div class="img-wrapper">
+                <img class="demo" src="img/portfolio/thumbnails/1.jpg" onclick="currentSlide(1)" alt="Project 1">
+              </div>
+
+              <div class="img-wrapper">
+                <img class="demo" src="img/portfolio/thumbnails/2.jpg" onclick="currentSlide(2)" alt="Project 2">
+              </div>
+
+              <div class="img-wrapper">
+                <img class="demo" src="img/portfolio/thumbnails/3.jpg" onclick="currentSlide(3)" alt="Project 3">
+              </div>
+
+              <div class="img-wrapper">
+                <img class="demo" src="img/portfolio/thumbnails/4.jpg" onclick="currentSlide(4)" alt="Project 4">
+              </div>
+              <div class="img-wrapper">
+                <img class="demo" src="img/portfolio/thumbnails/5.jpg" onclick="currentSlide(4)" alt="Project 5">
+              </div>
+              <div class="img-wrapper">
+                <img class="demo" src="img/portfolio/thumbnails/6.jpg" onclick="currentSlide(4)" alt="Project 6">
+              </div>-->
             </div>
           </div>
         </div>

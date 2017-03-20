@@ -91,12 +91,15 @@ hr{
 
 .navbar-toggler{
   cursor: pointer;
-  background-color: rgba(255, 255, 255, 0.5);
+  /*background-color: rgba(255, 255, 255, 0.3);*/
   transition: all 200ms ease-in-out;
+  /*padding: .2rem .6rem;*/
+  font-size: 1.3rem;
+  top: 8px;
 }
 
 .navbar-toggler:hover{
-  background-color: rgba(255, 255, 255, 0.6);
+  /*background-color: rgba(255, 255, 255, 0.5);*/
 }
 
 .navbar-toggler:focus{
@@ -109,7 +112,7 @@ hr{
   /* padding-top: 85px; */
   padding-bottom: 70px;
   display: block;
-  height: 100%;
+  /*height: 100%;*/
   overflow: hidden;
 }
 
@@ -183,7 +186,9 @@ hr{
 @keyframes popUp{
   0%{
     opacity: 0;
-    transform: scale(0) translateY(120px);
+    transform: scale(0) translateY(100px);
+    -webkit-transform-origin: 50% 100%;
+    transform-origin: 50% 100%;
   }
 
   80%{
@@ -191,7 +196,7 @@ hr{
   }
 
   100%{
-    transform: scale(1) translateY(0px);
+    transform: scale(1) translateY(0);
     opacity: 1;
   }
 }
@@ -263,7 +268,7 @@ hr{
 }
 
 .img-wrapper img{
-  width: 100%;
+  width:100%;
 }
 
 .orange-layer{
@@ -302,7 +307,6 @@ hr{
   font-size: 24px;
 }
 
-
 /*////////////LIGHTBOX/////////////////*/
 
 .row:after {
@@ -311,7 +315,6 @@ hr{
   clear: both;
 }
 
-/* The Modal (background) */
 .modal {
   display: none;
   position: fixed;
@@ -330,13 +333,12 @@ hr{
 }
 
 .mySlides img{
-  max-width: 600px;
-  -webkit-box-shadow: 0px 0px 4px 1px rgba(51,51,51,1);
-  -moz-box-shadow: 0px 0px 4px 1px rgba(51,51,51,1);
-  box-shadow: 0px 0px 4px 1px rgba(51,51,51,1);
+  -webkit-box-shadow:  0px 0px 4px 3px rgba(0,0,0,.3);
+  -moz-box-shadow:  0px 0px 4px 3px rgba(0,0,0,.3);
+  box-shadow: 0px 0px 4px 3px rgba(0,0,0,.3);
   opacity: 0.3;
   animation: imgDown 500ms ease-in-out forwards;
-
+  cursor: pointer;
 }
 
 @keyframes imgDown{
@@ -348,7 +350,6 @@ hr{
   }
 }
 
-/* Modal Content */
 .modal-content {
   position: relative;
   background-color: transparent;
@@ -358,17 +359,14 @@ hr{
   border: none;
 }
 
-/* The Close Button */
 .close {
   color: white;
   position: relative;
-  /* top: 30px; */
-  /* right: 25px; */
   font-size: 25px;
-  /* font-weight: bold; */
-  float: none;
-  left: 293px;
+  float: right;
   text-shadow: none;
+  transition: all 200ms ease-in-out;
+  padding-bottom: 5px;
 }
 
 .close:hover,
@@ -381,12 +379,17 @@ hr{
 .mySlides {
   display: none;
 }
-
+.sliders-wrapper{
+  width:50%;
+  position:relative;
+  margin:0 auto;
+  display:block;
+}
 .prev,
 .next {
   cursor: pointer;
   position: absolute;
-  top: 50%;
+  top: 60%;
   width: auto;
   padding: 16px;
   margin-top: -50px;
@@ -399,60 +402,72 @@ hr{
   -webkit-user-select: none;
 }
 
-/* Position the "next button" to the right */
 .next {
   right: 0;
   border-radius: 3px 0 0 3px;
 }
 
-/* On hover, add a black background color with a little bit see-through */
 .prev:hover, .next:hover {
   transform: translateY(-4px);
 }
 
-/* Number text (1/3 etc) */
 .numbertext {
   color: #f2f2f2;
   font-size: 12px;
   padding: 8px 12px;
   position: absolute;
-  bottom: -40px;
-  right: 260px;
+  right: 0;
+  display: block;
+  width: 55px;
+}
+.navbar-light .navbar-toggler-icon {
+    background-image: url(img/burguer.svg);
+}
+.navbar-light .navbar-toggler{
+  border: none;
 }
 
-.caption-container {
-  text-align: center;
-  background-color: black;
-  padding: 2px 16px;
-  color: white;
+/*///////////Media Queries////////////////*/
+@media (max-width: 992px) {
+  .sliders-wrapper{
+    width:70%;
+  }
 }
 
-img.demo {
-  opacity: 0.6;
-}
-
-.active,
-.demo:hover {
-  opacity: 1;
-}
-
-img.hover-shadow {
-  transition: 0.3s
-}
-
-.hover-shadow:hover {
-  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19)
-}
-
-/*///////////////////////////*/
-
-@media (max-width: 790px) {
+@media (max-width: 767px) {
   .nav-item:nth-child(1){
     margin-top: 20px;
   }
-
+  .sliders-wrapper{
+    width:100%;
+  }
+/*
   .prev,
   .next {
     display: none;
+  }*/
+
+    .navbar{
+      background-color: rgba(51,51,51,0.8);
+    }
+}
+
+@media (max-width: 576px) {
+
+  h1{
+    font-size: 40px;
+    padding-top: 45px;
+  }
+
+  .hero-section{
+    padding-bottom: 0;
+  }
+
+  .modal{
+    padding-top: 160px;
+  }
+
+  .prev, .next{
+    top: 63%;
   }
 }

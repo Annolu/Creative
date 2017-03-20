@@ -5,15 +5,14 @@ $(document).ready(function(){
 
     var distanceFromTop= $(this).scrollTop();
     var orangeSection= $('.orange-section');
+    var projectsSection= $('.projects-section');
     var darkSection= $('.dark-section');
-    var whiteSections= $('.white-sections');
-
-    var whiteSectionsOffset= whiteSections.offset().top;
+    var projectsSectionsOffset= projectsSection.offset().top;
 
     var orangeIconsPopUpPoint= orangeSection.offset().top + orangeSection[0].clientHeight/3;
     var darkIconsPopUpPoint= darkSection.offset().top -100;
 
-    if(distanceFromTop>orangeIconsPopUpPoint & distanceFromTop < whiteSectionsOffset+150){
+    if(distanceFromTop>orangeIconsPopUpPoint & distanceFromTop < projectsSectionsOffset-250){
       $('.orange-icons').addClass('pop-up');
     }
     if(distanceFromTop>darkIconsPopUpPoint){
@@ -47,6 +46,19 @@ $(document).ready(function(){
     }*/
   })
 
+  //top-nav closes when click outside of it
+
+  $('body').click(function(event){
+
+    var navbar= $('.navbar-collapse');
+    var eventTarget= $(event.target)
+
+    if(navbar.hasClass('show') && !eventTarget.hasClass('navbar-toggler-icon')){
+      $('.navbar-toggler').addClass('collapsed');
+      $('.navbar-collapse').removeClass('show');
+    }
+  })
+
   //smooth scroll to internal anchor link
 
   $('a[href*="#"]:not([href="#"])').on('click',function (e) {
@@ -59,8 +71,6 @@ $(document).ready(function(){
         'scrollTop': $target.offset().top - 100
     }, 900, 'swing');
 	})
-
-
 })
 //Lightbox
 
@@ -95,8 +105,18 @@ function showSlides(n) {
     slideIndex = slides.length
   }
 
-  for (var i = 0; i < slides.length; i++) {
-    slides[i].style.display = "none";
+  for (singleSlide of slides) {
+    singleSlide.style.display = "none";
   }
   slides[slideIndex-1].style.display = "block";
+
+  $('#myModal').click(function(event) {
+
+    var target= $(event.target);
+
+    if(!target.hasClass('img-fluid') && !target.hasClass('arrow')){
+      closeModal()
+      console.log('hello');
+    }
+  })
 }

@@ -66,7 +66,6 @@ hr{
   position: absolute;
   height: 100%;
   width: 100%;
-  /*transform: perspective(500px) translate3d(10px,0px,0px);*/
 }
 
 .navbar{
@@ -91,28 +90,24 @@ hr{
 
 .navbar-toggler{
   cursor: pointer;
-  /*background-color: rgba(255, 255, 255, 0.3);*/
   transition: all 200ms ease-in-out;
-  /*padding: .2rem .6rem;*/
   font-size: 1.3rem;
   top: 8px;
-}
-
-.navbar-toggler:hover{
-  /*background-color: rgba(255, 255, 255, 0.5);*/
+  border: none;
 }
 
 .navbar-toggler:focus{
   outline: none;
 }
 
+.navbar-light .navbar-toggler-icon {
+    background-image: url(img/burguer.svg);
+}
+
 .hero-section{
   position: relative;
-  /* background: url(img/header.jpg) no-repeat; */
-  /* padding-top: 85px; */
   padding-bottom: 70px;
   display: block;
-  /*height: 100%;*/
   overflow: hidden;
 }
 
@@ -420,11 +415,33 @@ hr{
   display: block;
   width: 55px;
 }
-.navbar-light .navbar-toggler-icon {
-    background-image: url(img/burguer.svg);
+
+
+.footer .content-wrapper {
+    padding: 50px 0;
 }
-.navbar-light .navbar-toggler{
-  border: none;
+
+.footer p{
+  margin-bottom: 0;
+}
+
+.footer .icons {
+  font-size: 30px;
+  margin: 0 15px;
+}
+
+.icons i{
+  transition: all 400ms;
+}
+
+.icons:hover i{
+  color: #333;
+  -webkit-transform: rotate(360deg);
+  transform: rotate(360deg);
+}
+
+.terms a{
+  margin: 0 5px;
 }
 
 /*///////////Media Queries////////////////*/

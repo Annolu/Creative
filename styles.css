@@ -51,6 +51,108 @@ hr{
   height: 2px;
 }
 
+.spinner-wrapper{
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: #fff;
+    z-index: 999999;
+}
+
+.spinner {
+   top: 300px;
+   position: relative;
+   display: block;
+   margin: auto;
+   padding: 0;
+   width: 100px;
+   height: 15px;
+   text-align: center;
+}
+
+.spinner i {
+  position: relative;
+  display: inline-block;
+  margin: 0 4px;
+  width: 5px;
+  height: 15px;
+  border-radius: 2px;
+  border: solid #666;
+  border-width: 0 1px 1px 0;
+  background: #333;
+  animation: tilt infinite 5s cubic-bezier(0.955, -0.010, 1.000, 1.000);
+  transform-origin: 100% 100%;
+}
+
+.spinner i::before {
+  content: '';
+  position: absolute;
+  z-index: -1;
+  bottom: 0;
+  display: block;
+  width: 5px;
+  height: 5px;
+  background: transparent;
+  box-shadow: 0 2px rgba(0,0,0,.3);
+  animation: stretch infinite 5s cubic-bezier(0.955, -0.010, 1.000, 1.000);
+  opacity: 0;
+  transform-origin: 0% 0%;
+}
+
+.spinner i:nth-child(2),
+.spinner i:nth-child(2)::before {
+  animation-delay: .3s;
+}
+
+.spinner i:nth-child(3),
+.spinner i:nth-child(3)::before {
+  animation-delay: .6s;
+}
+
+.spinner i:nth-child(4),
+.spinner i:nth-child(4)::before {
+  animation-delay: .9s;
+}
+
+.spinner i:nth-child(5),
+.spinner i:nth-child(5)::before {
+  animation-delay: 1.2s;
+}
+
+.spinner i:last-of-type {
+  animation-name: tilt-last;
+}
+
+.spinner i:last-of-type::before {
+  animation-name: stretch-last;
+}
+
+@keyframes tilt {
+  10% { transform: rotate(70deg) }
+  60% { transform: rotate(70deg) }
+  70% { transform: rotate( 0deg) }
+}
+
+@keyframes tilt-last {
+  10% { transform: rotate(90deg) }
+  60% { transform: rotate(90deg) }
+  70% { transform: rotate( 0deg) }
+}
+
+@keyframes stretch {
+  10% { transform: rotate(-70deg); width: 10px; opacity: 1; left: 0px; bottom: -1px; }
+  60% { transform: rotate(-70deg); width: 10px; opacity: 1; }
+  70% { width: 5px; transform: rotate(0deg); opacity: 0; }
+}
+
+@keyframes stretch-last {
+  10% { transform: rotate(-90deg); width: 10px; height: 2px; opacity: .5; left: 3px; bottom: -1px; }
+  60% { transform: rotate(-90deg); width: 10px; height: 2px; opacity: .5; }
+  70% { transform: rotate(0deg); width: 5px; height: 5px;opacity: 0;}
+}
+
 .centred-wrapper{
   max-width: 800px;
   margin: 0 auto;
@@ -126,7 +228,7 @@ hr{
   background-color: #F05F40;
   height: 50px;
   width: 120px;
-  padding: 15px 40px;
+  padding: 12px 35px;
   border-radius: 24px;
   transition: all 200ms ease-in-out;
   text-transform: uppercase;
@@ -277,13 +379,13 @@ hr{
   height: 100%;
   width: 100%;
   opacity: 0;
-  transition: all 200ms ease-in-out;
-  transform: rotateX(90deg);
+  transition: all 300ms ease-in-out;
+  transform: rotateY(90deg);
 }
 
 .projects-section .img-wrapper:hover > .orange-layer{
   opacity: 1;
-  transform: rotateX(0deg);
+  transform: rotateY(0deg);
 }
 
 .orange-layer p{
@@ -379,12 +481,14 @@ hr{
 .mySlides {
   display: none;
 }
+
 .sliders-wrapper{
   width:50%;
   position:relative;
   margin:0 auto;
   display:block;
 }
+
 .arrow {
   cursor: pointer;
   position: absolute;
@@ -401,13 +505,13 @@ hr{
   -webkit-user-select: none;
 }
 
+.arrow:hover {
+  transform: translateY(-4px);
+}
+
 .next {
   right: 0;
   border-radius: 3px 0 0 3px;
-}
-
-.arrow:hover {
-  transform: translateY(-4px);
 }
 
 .numbertext {
@@ -446,9 +550,15 @@ hr{
 
 .terms a{
   margin: 0 5px;
+  transition: all 300ms ease-in-out;
+}
+
+.terms a:hover{
+  text-decoration: underline;
 }
 
 /*///////////Media Queries////////////////*/
+
 @media (max-width: 992px) {
   .sliders-wrapper{
     width:70%;

@@ -14,8 +14,24 @@
     <!--[if lt IE 9]>
       <script src="https://cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv.js"></script>
     <![endif]-->
+    <script src="https://code.jquery.com/jquery-1.11.0.min.js"></script>
+    <script>
+      $(window).load(function(){
+        preloaderFadeOutTime= 500;
+        function hidePreloader(){
+          var preloader= $('.spinner-wrapper');
+          preloader.fadeOut(preloaderFadeOutTime)
+        }
+        hidePreloader();
+      })
+    </script>
   </head>
   <body>
+    <div class="spinner-wrapper">
+      <div class="spinner">
+        <i></i><i></i><i></i><i></i><i></i>
+      </div>
+    </div>
     <header>
       <nav class="navbar navbar-toggleable-sm navbar-light fixed-top">
         <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
@@ -202,7 +218,6 @@
     </section>
 
     <!-- jQuery first, then Tether, then Bootstrap JS. -->
-    <script src="https://code.jquery.com/jquery-1.11.0.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/tether/1.4.0/js/tether.min.js" integrity="sha384-DztdAPBWPRXSA/3eYEEUWrWCy7G5KFbe8fFjk5JAIxUYHKkDx6Qin1DkWx51bBrb" crossorigin="anonymous"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/js/bootstrap.min.js" integrity="sha384-vBWWzlZJ8ea9aCX4pEW3rVHjgjt7zpkNpZk+02D9phzyeVkE+jo0ieGizqPLForn" crossorigin="anonymous"></script>
     <script src="scripts.js"></script>

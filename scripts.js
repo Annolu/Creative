@@ -22,11 +22,11 @@ $(document).ready(function(){
 
   iconsPupUp();
 
+  //dark topnav background
+
   $(window).scroll(function(){
 
-    let distanceFromTop= $(this).scrollTop();
-
-    //dark topnav background
+    var distanceFromTop= $(this).scrollTop();
     var navbar= $('.navbar');
 
     if(distanceFromTop>1){
@@ -36,14 +36,6 @@ $(document).ready(function(){
     }
 
     iconsPupUp();
-    /*
-    var parallax= $('.parallax');
-
-    if(distanceFromTop>1){
-      parallax.css("transform", "perspective(50px) translate3d(1px,1px,1px)");
-    }else{
-      parallax.css("transform", "perspective(0px) translate3d(0px,0px,0px)");
-    }*/
   })
 
   //top-nav closes when click outside of it
@@ -72,12 +64,14 @@ $(document).ready(function(){
     }, 900, 'swing');
 	})
 })
+
 //Lightbox
 
 function createSlides() {
   var total= 6;
+  var i=1;
 
-  for (var i=1; i<=total; i++){
+  for (i; i<=total; i++){
     var slidersWrapper= $('.sliders-wrapper')[0];
 
     var mySlides= document.createElement('div');
@@ -102,9 +96,6 @@ function openModal() {
   $('body').addClass('stop-scroll');
   createSlides()
 }
-
-//console.log(slidersWrapper.has('div').hasClass('mySlides'));
-//console.log(slidersWrapper.children()[1]);
 
 function closeModal() {
   document.getElementById('myModal').style.display = "none";
@@ -135,12 +126,14 @@ function showSlides(n) {
   for (singleSlide of slides) {
     singleSlide.style.display = "none";
   }
-  slides[slideIndex-1].style.display = "block";
 
+  if(slides[slideIndex-1]){
+    slides[slideIndex-1].style.display = "block";
+  }
+
+  //close modal when click outside the img
   $('#myModal').click(function(event) {
-
     var target= $(event.target);
-
     if(!target.hasClass('img-fluid') && !target.hasClass('arrow')){
       closeModal()
     };

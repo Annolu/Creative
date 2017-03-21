@@ -5,12 +5,12 @@ $(document).ready(function(){
 
     var distanceFromTop= $(this).scrollTop();
     var orangeSection= $('.orange-section');
-    var projectsSection= $('.projects-section');
-    var darkSection= $('.dark-section');
-    var projectsSectionsOffset= projectsSection.offset().top;
-
     var orangeIconsPopUpPoint= orangeSection.offset().top + orangeSection[0].clientHeight/3;
-    var darkIconsPopUpPoint= darkSection.offset().top -100;
+
+    var projectsSection= $('.projects-section');
+    var projectsSectionsOffset= projectsSection.offset().top;
+    var projectsSectionHeight= projectsSection[0].clientHeight;
+    var darkIconsPopUpPoint= projectsSectionsOffset + projectsSectionHeight - 300;
 
     if(distanceFromTop>orangeIconsPopUpPoint & distanceFromTop < projectsSectionsOffset-250){
       $('.orange-icons').addClass('pop-up');
@@ -116,7 +116,6 @@ function showSlides(n) {
 
     if(!target.hasClass('img-fluid') && !target.hasClass('arrow')){
       closeModal()
-      console.log('hello');
     }
   })
 }

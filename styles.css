@@ -237,6 +237,11 @@ hr{
   margin-bottom: 50px;
 }
 
+.parallax.two{
+  background-image: url("img/mountains.jpeg");
+  position: relative;
+}
+
 .white-sections.contact .thumbnails i{
   color: #333;
   font-size: 45px;
@@ -415,7 +420,6 @@ hr{
   display: block;
   width: 55px;
 }
-
 
 .footer .content-wrapper {
     padding: 50px 0;

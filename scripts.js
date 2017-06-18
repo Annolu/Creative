@@ -123,7 +123,7 @@ function showSlides(n) {
     slideIndex = slides.length;
   }
 
-  for (singleSlide of slides) {
+  for (singleSlide of Array.from(slides)) {
     singleSlide.style.display = "none";
   }
 

@@ -65,15 +65,19 @@ hr{
   bottom: 0;
   background-color: #fff;
   z-index: 999999;
+  display: -webkit-flex;
+  -webkit-align-items: flex-start;
+  display: flex;
+  align-items: flex-start;
   .spinner{
-    top: 300px;
     position: relative;
     display: block;
-    margin: auto;
+    margin: 0 auto;
     padding: 0;
     width: 100px;
     height: 15px;
     text-align: center;
+    align-self: center;
   }
   i{
     position: relative;
@@ -212,6 +216,7 @@ hr{
   padding-bottom: 70px;
   display: block;
   overflow: hidden;
+  height: 100%;
   p{
     padding-bottom: 50px;
     color: $light-muted-text;
@@ -362,7 +367,6 @@ hr{
          -ms-transform: rotateY(0deg);
          -webkit-transform: rotateY(0deg);
          -moz-transform: rotateY(0deg);
-         -o-transform: rotateY(0deg);
          transform: rotateY(0deg);
       }
     }
@@ -378,12 +382,10 @@ hr{
   z-index: 1;
   -ms-transition: all 300ms ease-in-out;
   -webkit-transition: all 300ms ease-in-out;
-  -o-transition: all 300ms ease-in-out;
   transition: all 300ms ease-in-out;
   -ms-transform: rotateY(90deg);
   -webkit-transform: rotateY(90deg);
   -moz-transform: rotateY(90deg);
-  -o-transform: rotateY(90deg);
   transform: rotateY(90deg);
 
   p{
@@ -543,6 +545,14 @@ hr{
 }
 
 /*///////////Media Queries////////////////*/
+
+@media (min-width: 1290px) {
+  .hero-section{
+    .container{
+      padding-top: 8%;
+    }
+  }
+}
 
 @media (max-width: 992px) {
   .sliders-wrapper{

@@ -1,5 +1,11 @@
 $(document).ready(function(){
 
+  function hidePreloader(){
+    var preloader= $('.spinner-wrapper');
+    preloader.fadeOut(400)
+  }
+  hidePreloader();
+
   //orange and dark icons pup-up
   function iconsPupUp() {
 

@@ -1,10 +1,6 @@
 $(document).ready(function(){
 
-  function hidePreloader(){
-    var preloader= $('.spinner-wrapper');
-    preloader.fadeOut(400)
-  }
-  hidePreloader();
+  setTimeout(hidePreloader, 700);
 
   //orange and dark icons pup-up
   function iconsPupUp() {
@@ -69,9 +65,13 @@ $(document).ready(function(){
         'scrollTop': $target.offset().top - 100
     }, 900, 'swing');
 	})
-})
 
-//Lightbox
+  function hidePreloader(){
+    $('body').removeClass('no-scroll');
+    var preloader= $('.spinner-wrapper');
+    preloader.fadeOut(400)
+  }
+})
 
 function createSlides() {
   var total= 6;
@@ -99,13 +99,13 @@ function createSlides() {
 
 function openModal() {
   document.getElementById('myModal').style.display = "block";
-  $('body').addClass('stop-scroll');
+  $('body').addClass('no-scroll');
   createSlides()
 }
 
 function closeModal() {
   document.getElementById('myModal').style.display = "none";
-  $('body').removeClass('stop-scroll');
+  $('body').removeClass('no-scroll');
 }
 
 var slideIndex = 1;

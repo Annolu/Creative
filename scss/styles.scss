@@ -5,7 +5,6 @@ $light-muted-text: rgba(255, 255, 255, 0.7);
 @mixin animation($name, $duration, $ease, $delay, $direction) {
   -webkit-animation: $name $duration $ease $delay $direction;
   -moz-animation: $name $duration $ease $delay $direction;
-  -o-animation: $name $duration $ease $delay $direction;
   -ms-animation: $name $duration $ease $delay $direction;
   animation: $name $duration $ease $delay $direction;
 }
@@ -422,7 +421,7 @@ hr{
   background-color: rgba(11,11,11, .8);
 }
 
-.stop-scroll{
+.no-scroll{
   overflow: hidden;
 }
 

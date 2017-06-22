@@ -270,25 +270,21 @@ hr {
   .white-sections .thumbnails:nth-child(1) i.pop-up {
     -webkit-animation: popUp 400ms ease-in-out 0ms forwards;
     -moz-animation: popUp 400ms ease-in-out 0ms forwards;
-    -o-animation: popUp 400ms ease-in-out 0ms forwards;
     -ms-animation: popUp 400ms ease-in-out 0ms forwards;
     animation: popUp 400ms ease-in-out 0ms forwards; }
   .white-sections .thumbnails:nth-child(2) i.pop-up {
     -webkit-animation: popUp 400ms ease-in-out 200ms forwards;
     -moz-animation: popUp 400ms ease-in-out 200ms forwards;
-    -o-animation: popUp 400ms ease-in-out 200ms forwards;
     -ms-animation: popUp 400ms ease-in-out 200ms forwards;
     animation: popUp 400ms ease-in-out 200ms forwards; }
   .white-sections .thumbnails:nth-child(3) i.pop-up {
     -webkit-animation: popUp 400ms ease-in-out 400ms forwards;
     -moz-animation: popUp 400ms ease-in-out 400ms forwards;
-    -o-animation: popUp 400ms ease-in-out 400ms forwards;
     -ms-animation: popUp 400ms ease-in-out 400ms forwards;
     animation: popUp 400ms ease-in-out 400ms forwards; }
   .white-sections .thumbnails:nth-child(4) i.pop-up {
     -webkit-animation: popUp 400ms ease-in-out 600ms forwards;
     -moz-animation: popUp 400ms ease-in-out 600ms forwards;
-    -o-animation: popUp 400ms ease-in-out 600ms forwards;
     -ms-animation: popUp 400ms ease-in-out 600ms forwards;
     animation: popUp 400ms ease-in-out 600ms forwards; }
 
@@ -366,7 +362,7 @@ hr {
   overflow: auto;
   background-color: rgba(11, 11, 11, 0.8); }
 
-.stop-scroll {
+.no-scroll {
   overflow: hidden; }
 
 .mySlides {
